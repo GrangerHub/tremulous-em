@@ -11,6 +11,7 @@
 cmake_minimum_required(VERSION 3.5)
 project(Tremulous C CXX)
 
+set(OpenGL_GL_PREFERENCE LEGACY)
 set(CMAKE_CXX_FLAGS -std=c++1y)
 set(CMAKE_C_FLAGS -std=gnu99)
 
@@ -33,7 +34,6 @@ option(USE_INTERNAL_JPEG "" ON)
 option(USE_OPENAL "" ON)
 option(USE_OPENAL_DLOPEN "" ON)
 option(USE_VOIP "" OFF)
-option(USE_MUMBLE "" OFF)
 option(USE_CODEC_OPUS "" ON)
 option(USE_RESTCLIENT "" ON)
 
@@ -56,7 +56,10 @@ add_subdirectory(external/libvorbis-1.3.5)
 
 # engine
 add_subdirectory(src/script)
+add_subdirectory(src/qcommon) 
 add_subdirectory(src/renderercommon)
+
+# renderers
 add_subdirectory(src/renderergl1)
 add_subdirectory(src/renderergl2)
 
