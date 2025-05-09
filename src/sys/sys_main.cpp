@@ -60,21 +60,21 @@ along with Tremulous; if not, see <https://www.gnu.org/licenses/>
 #endif
 #endif
 
-#include "qcommon/files.h"
-#include "qcommon/q_shared.h"
-#include "qcommon/qcommon.h"
-#include "qcommon/vm.h"
+#include "../qcommon/files.h"
+#include "../qcommon/q_shared.h"
+#include "../qcommon/qcommon.h"
+#include "../qcommon/vm.h"
 #ifndef DEDICATED
-#include "script/bind.h"
-#include "script/client.h"
+#include "../script/bind.h"
+#include "../script/client.h"
 #ifdef USE_RESTCLIENT
-#include "script/http_client.h"
+#include "../script/http_client.h"
 #endif
 #endif
-#include "script/cmd.h"
-#include "script/cvar.h"
-#include "script/rapidjson.h"
-#include "script/nettle.h"
+#include "../script/cmd.h"
+#include "../script/cvar.h"
+#include "../script/rapidjson.h"
+#include "../script/nettle.h"
 
 #include "dialog.h"
 #include "sys_loadlib.h"

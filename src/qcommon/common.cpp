@@ -34,13 +34,13 @@ along with Tremulous; if not, see <https://www.gnu.org/licenses/>
 //#include <sys/stat.h> // umask
 #endif
 
-#include "sys/sys_shared.h"
+#include "../sys/sys_shared.h"
 
 #include "cmd.h"
 #include "crypto.h"
 #include "cvar.h"
 #include "files.h"
-#define JSON_IMPLEMENTATION
+#define JSON_IMPLEMENTATION    // FIX ME
 #include "json.h"
 #include "msg.h"
 #include "q_shared.h"

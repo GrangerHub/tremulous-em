@@ -33,9 +33,9 @@ along with Tremulous; if not, see <https://www.gnu.org/licenses/>
 #include <stdlib.h>
 #include <math.h>
 
-#include "renderercommon/tr_common.h"
-#include "qcommon/cvar.h"
-#include "sys/sys_local.h"
+#include "../renderercommon/tr_common.h"
+#include "../qcommon/cvar.h"
+#include "../sys/sys_local.h"
 #include "sdl_icon.h"
 
 typedef enum

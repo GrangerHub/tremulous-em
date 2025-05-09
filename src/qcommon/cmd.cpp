@@ -31,7 +31,7 @@ along with Tremulous; if not, see <https://www.gnu.org/licenses/>
 #include "qcommon.h"
 
 #ifndef DEDICATED
-#include "client/client.h"
+#include "../client/client.h"
 #endif
 
 #define	MAX_CMD_BUFFER  128*1024
@@ -800,10 +800,12 @@ void	Cmd_CommandCompletion( void(*callback)(const char *s) ) {
 }
 
 /*
+
 ============
 Cmd_CompleteArgument
 ============
 */
+
 void Cmd_CompleteArgument( const char *command, char *args, int argNum )
 {
     cmd_function_t	*cmd;
@@ -811,18 +813,20 @@ void Cmd_CompleteArgument( const char *command, char *args, int argNum )
     // FIXIT-H: There needs to be a way to toggle this functionality at runtime
     // rather than just crashing when a cgame doesn't provide support. #45
     //  https://github.com/GrangerHub/tremulous/issues/45
+
 #if 0
 #ifndef DEDICATED
     // Forward command argument completion to CGAME VM
     if( cls.cgame && !VM_Call( cls.cgame, CG_CONSOLE_COMPLETARGUMENT, argNum ) )
 #endif
+
 #endif
+
     // Call local completion if VM doesn't pick up
     for( cmd = cmd_functions; cmd; cmd = cmd->next )
         if( !Q_stricmp( command, cmd->name ) && cmd->complete )
             cmd->complete( args, argNum );
 }
-
 
 /*
 ============
@@ -919,7 +923,7 @@ Cmd_CompleteCfgName
 */
 void Cmd_CompleteCfgName( char *args, int argNum ) {
 	if( argNum == 2 ) {
-		Field_CompleteFilename( "", "cfg", false, true );
+		Field_CompleteFilename( "", "cfg", (qboolean)false, (qboolean)true );    // Cast as qbooleans for emscripten
 	}
 }
 

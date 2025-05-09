@@ -25,7 +25,7 @@ along with Tremulous; if not, see <https://www.gnu.org/licenses/>
 
 #include "server.h"
 
-#include "qcommon/cvar.h"
+#include "../qcommon/cvar.h"
 
 // Attack log file is started when server is init (!= sv_running 1!)
 // we even log attacks when the server is waiting for rcon and doesn't run a map

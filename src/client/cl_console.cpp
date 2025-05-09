@@ -25,7 +25,7 @@ along with Tremulous; if not, see <https://www.gnu.org/licenses/>
 
 #include "client.h"
 
-#include "qcommon/cdefs.h"
+#include "../qcommon/cdefs.h"
 
 int g_console_field_width = 78;
 
@@ -391,10 +391,10 @@ void Con_CheckResize (void)
 ==================
 Cmd_CompleteTxtName
 ==================
-*/
+*/ 
 void Cmd_CompleteTxtName( char *args UNUSED, int argNum ) {
 	if( argNum == 2 ) {
-		Field_CompleteFilename( "", "txt", false, true );
+		Field_CompleteFilename( "", "txt", (qboolean)false, (qboolean)true );   // Use qbooleans for emscripten
 	}
 }
 
@@ -469,7 +469,7 @@ void Con_Init (void) {
 	Cmd_AddCommand ("togglemenu", Con_ToggleMenu_f);
 	Cmd_AddCommand ("clear", Con_Clear_f);
 	Cmd_AddCommand ("condump", Con_Dump_f);
-	Cmd_SetCommandCompletionFunc( "condump", Cmd_CompleteTxtName );
+	//Cmd_SetCommandCompletionFunc( "condump", Cmd_CompleteTxtName );
 }
 
 /*

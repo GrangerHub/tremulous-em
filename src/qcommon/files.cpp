@@ -51,9 +51,9 @@
 #include "vm.h"
 
 #ifndef DEDICATED
-#include "client/cl_rest.h"
+#include "../client/cl_rest.h"
 #endif
-#include "sys/sys_shared.h"
+#include "../sys/sys_shared.h"
 
 using namespace std;
 
