@@ -11,6 +11,8 @@
 cmake_minimum_required(VERSION 3.5)
 project(Tremulous C CXX)
 
+#set(OpenGL_GL_PREFERENCE LEGACY)
+set(OpenGL_GL_PREFERENCE GLVND)
 set(CMAKE_CXX_FLAGS -std=c++1y)
 set(CMAKE_C_FLAGS -std=gnu99)
 
@@ -57,6 +59,9 @@ add_subdirectory(external/libvorbis-1.3.5)
 # engine
 add_subdirectory(src/script)
 add_subdirectory(src/renderercommon)
+add_subdirectory(src/qcommon)
+
+# renderers
 add_subdirectory(src/renderergl1)
 add_subdirectory(src/renderergl2)
 
@@ -93,8 +98,8 @@ endif(BUILD_GRANGER)
 # |   -  _|   |   |       | |  __|  _  |        |  _  ||  |  ||  -__|   _|
 # |_______|\_____/|__|_|__| |____|_____|__|__|__|   __||__|__||_____|__|
 #                                               |__|
-# TODO: DO NOT build unless building a QVM
 
+# TODO: DO NOT build unless building a QVM
 add_subdirectory(src/tools)
 
 #

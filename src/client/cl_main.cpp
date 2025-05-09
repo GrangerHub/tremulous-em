@@ -1720,7 +1720,7 @@ static void CL_CompleteRcon(char *args, int argNum)
         // Skip "rcon "
         char *p = Com_SkipTokens(args, 1, " ");
 
-        if (p > args) Field_CompleteCommand(p, qtrue, qtrue);    // Use qbooleans for emscripten
+        if (p > args) Field_CompleteCommand(p, (qboolean)true, (qboolean)true);    // Cast as qbooleans for emscripten
     }
 }
 

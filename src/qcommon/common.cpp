@@ -40,7 +40,7 @@ along with Tremulous; if not, see <https://www.gnu.org/licenses/>
 #include "crypto.h"
 #include "cvar.h"
 #include "files.h"
-#define JSON_IMPLEMENTATION    // FIX ME
+#define JSON_IMPLEMENTATION
 #include "json.h"
 #include "msg.h"
 #include "q_shared.h"

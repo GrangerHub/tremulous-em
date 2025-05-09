@@ -1186,7 +1186,7 @@ static void Key_CompleteBind( char *args, int argNum )
 		p = Com_SkipTokens( args, 2, " " );
 
 		if( p > args )
-			Field_CompleteCommand( p, qtrue, qtrue );    // Use qbooleans for emscripten
+			Field_CompleteCommand( p, (qboolean)true, (qboolean)true );    // Cast as qbooleans for emscripten
 	}
 }
 

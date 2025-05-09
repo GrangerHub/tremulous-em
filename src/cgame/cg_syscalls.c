@@ -602,7 +602,6 @@ qboolean trap_Key_GetOverstrikeMode( void ) {
   return syscall( CG_KEY_GETOVERSTRIKEMODE );
 }
 
-// Reverted 9e0a8c5b
 void trap_Field_CompleteList( char *listJson ) {  
   syscall( CG_FIELD_COMPLETELIST, listJson );
 }
