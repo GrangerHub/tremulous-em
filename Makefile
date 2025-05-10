@@ -820,7 +820,7 @@ ifeq ($(PLATFORM),js)
     -s SIDE_MODULE=1 \
     $(OPTIMIZE)
 
-  CLIENT_CFLAGS += -s USE_SDL=2 -s WASM=0
+  CLIENT_CFLAGS += -s USE_SDL=2 -s WASM=1 -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS=['png','jpg']
   CLIENT_LIBS += -lidbfs.js
   SHLIBCFLAGS=-fPIC
   SERVER_LIBS += -lnodefs.js
